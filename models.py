@@ -2,6 +2,7 @@
 #This file will contain the parent User class, 
 #the child classes (Admin, Doctor, Patient) 
 #demonstrating inheritance, and the standalone Appointment class.
+#Takes input and stores it in a dictionary format for easy retrieval and management of user and appointment data.
 
 
 #This is the parent class for all users who log into the clinic appointment system
@@ -89,6 +90,31 @@ class Patient(User):  #Patient class inherits from User class
         return data 
 
 class Appointment:  #Appointment class to manage appointments
+  def __init__(self, appointment_id, patient_id, doctor_id, date, start_time, duration_minutes=60, status="Active"):
+    self.appointment_id = appointment_id
+    self.patient_id = patient_id
+    self.doctor_id = doctor_id
+    self.date = date
+    self.start_time = start_time
+    self.duration = duration_minutes  # Duration in minutes
+    self.status = status    
 
+    def update_status(self, new_status):  #method to update the status of the appointment (e.g., Active, Completed, Cancelled)
+        self.status = new_status
+
+    def reschedule_appointment(self, new_date, new_start_time):  #method to reschedule an existing appointment
+        self.date = new_date
+        self.start_time = new_start_time
+
+    def to_dict(self):  #method to convert the appointment object to a dictionary for easy storage and retrieval
+        return {
+            "appointment_id": self.appointment_id,
+            "patient_id": self.patient_id,
+            "doctor_id": self.doctor_id,
+            "date": self.date,
+            "start_time": self.start_time,
+            "duration": self.duration,
+            "status": self.status
+        }
 
 
