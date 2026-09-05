@@ -28,6 +28,7 @@ class User:
 
 class Admin(User):  #Admin class inherits from User class
     def __init__(self, user_id, name, pin, phone_number):
+        # Call the parent class (User) constructor  
         super().__init__(user_id, name, pin, phone_number)  
 
     def to_dict(self):  #overrides the to_dict method to include the role of the user
