@@ -27,3 +27,19 @@ def load_data():
         appointments = []
 
     return patients, doctors, appointments
+
+def save_data(patients, doctors, appointments):
+    """
+    Writes patients, doctors, and appointments back to their respective JSON files.
+    """
+    # 1. Save patients.json
+    with open('patients.json', 'w') as f:
+        json.dump(patients, f, indent=4)
+
+    # 2. Save doctors.json
+    with open('doctors.json', 'w') as f:
+        json.dump(doctors, f, indent=4)
+
+    # 3. Save appointments.json
+    with open('appointments.json', 'w') as f:
+        json.dump(appointments, f, indent=4)
