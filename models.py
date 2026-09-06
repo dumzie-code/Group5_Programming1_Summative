@@ -28,8 +28,8 @@ class User:
 
 class Admin(User):  #Admin class inherits from User class
     def __init__(self, user_id, name, pin, phone_number):
-        # Call the parent class (User) constructor  
-        super().__init__(user_id, name, pin, phone_number)  
+            #call the parent class (User) constructor  
+            super().__init__(user_id, name, pin, phone_number)  
 
     def to_dict(self):  #overrides the to_dict method to include the role of the user
         data = super().to_dict()
@@ -42,9 +42,9 @@ class Doctor(User):   #Doctor class inherits from User class
         self.specialization = specialization
         self.shifts = shifts
 
-    def update_shift(self, start_time, end_time):  #method to update the doctor's shifts
-        self.shift_start_time = start_time
-        self.shift_end_time = end_time
+    def update_shifts(self, shift_start_time, shift_end_time):  #method to update the doctor's shifts
+        self.shift_start_time = shift_start_time
+        self.shift_end_time = shift_end_time
 
     def to_dict(self):   #overrides the to_dict method to include the role of the user, specialization, and shifts
         data = super().to_dict()
