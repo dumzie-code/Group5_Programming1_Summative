@@ -37,10 +37,11 @@ class Admin(User):  #Admin class inherits from User class
         return data
 
 class Doctor(User):   #Doctor class inherits from User class
-    def __init__(self, user_id, name, pin, phone_number, specialization, shifts):
+    def __init__(self, user_id, name, pin, phone_number, specialization, shift_start_time, shift_end_time):
         super().__init__(user_id, name, pin, phone_number)
         self.specialization = specialization
-        self.shifts = shifts
+        self.shift_start_time = shift_start_time
+        self.shift_end_time = shift_end_time
 
     def update_shifts(self, shift_start_time, shift_end_time):  #method to update the doctor's shifts
         self.shift_start_time = shift_start_time
