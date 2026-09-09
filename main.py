@@ -1,9 +1,11 @@
+from validation import get_valid_menu
 print("========================================")
 print("Clinic Appointment And Management System")
 print("========================================")
 
+
 def main():  # this particular function will control the main flow
-              #of the application'
+   
 
     while True:
         #Keep the system running until the user chooses to exit
@@ -38,5 +40,6 @@ def main():  # this particular function will control the main flow
 
 
     print("Welcome to the System!")
-
-main()
+menu =get_valid_menu() 
+if menu==1:
+    main()
