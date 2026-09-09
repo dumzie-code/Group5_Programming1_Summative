@@ -91,7 +91,7 @@ def get_valid_date():
      while True:
         try:
             date_input= input("Please enter your appointment date")
-            date = datetime.strptime(due_date_input, "%Y-%m-%d").date() 
+            date = datetime.strptime(date_input, "%Y-%m-%d").date() 
             break
         except ValueError:
             print("Invalid format. Please try again with this format date as, YYYY-MM-DD: ")

@@ -64,7 +64,7 @@ class Patient(User):  #Patient class inherits from User class
         self.email = email
         self.address = address
         self.notification = notification
-
+    
     def update_profile(self, name=None, phone_number=None, gender=None, date_of_birth=None, email=None, address=None):  #method to update the patient's profile
         updates = {"name": name, "phone_number": phone_number, "gender": gender, "date_of_birth": date_of_birth, "email": email, "address": address}
         for field, value in updates.items():
