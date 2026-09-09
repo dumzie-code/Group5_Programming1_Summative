@@ -1,8 +1,79 @@
-from validation import get_valid_menu
 print("========================================")
 print("Clinic Appointment And Management System")
 print("========================================")
 
+
+
+def admin_menu():
+    #This function displays the options available
+    #to an adminstrator.
+
+    while True:
+        print("ADMINISTRATOR MENU")
+        print("1.Register new patient")
+        print("2.Display all patients")
+        print("3.Search patient")
+        print("4.Update patient information")
+        print("5.Add doctor")
+        print("6.View appointments")
+        print("7.Logout")
+
+        choice = input("Choose an option: ")
+
+        if  choice =="7":
+            print("Logging out...")
+            break
+
+
+        else:
+            print("Option selected:",choice)
+
+
+
+def  doctor_menu():
+    #this function displays the options available to a doctor 
+
+
+    while True:
+        print("=====DOCTOR MENU=====")
+        print("1.View appointment")
+        print("2.View patient information")
+        print("3.Update appointment")
+        print("4.Logout")
+
+
+        choice = input("Choose an option: ")
+
+
+        if choice =="4":
+            print("Logging out...")
+
+
+        else:
+            print("Option selected:", choice)
+
+
+
+def patient_menu():
+
+
+    while True:
+        print("========PATIENT MENU========")
+        print("1.View my infomation")
+        print("2.Book appointment")
+        print("3.View my appointment")
+        print("4.Cancel appointment")
+        print("5.Logout")
+
+        choice = input("Choose an option ")
+
+        if choice =="5":
+            print("Logging out...")
+            break
+
+
+        else:
+            print("Option selected:", choice)
 
 def main():  # this particular function will control the main flow
    
@@ -12,7 +83,7 @@ def main():  # this particular function will control the main flow
         print("Clinic system is running ...")  
 
     #Ask the user for their ID or type Exit 
-        user_id =input("Enter your ID or type Exit: ")
+        user_id =input("Enter your ID ,type NEW for registration,or Exit to close: ")
 
         if user_id =="Exit":
             #close the system when the user chooses Exit
@@ -22,11 +93,16 @@ def main():  # this particular function will control the main flow
         elif user_id =="NEW":  #start the registration process for a new patient
             print("Starting new patient registration")
 
-        elif user_id.startswith("A-"): # An ID starting with A belongs to the Adminstrator 
+        elif user_id.startswith("A-"): # An ID starting with A belongs to the Adminstrator
+
+            admin_menu() 
+
             print("Opening Adminstrator Menu")
 
         elif user_id.startswith("DR-"):
-            print("Opening Doctor Menu ")
+            print("Opening Doctor Menu... ")
+            #open the doctor's menu
+            doctor_menu()
 
         elif user_id.startswith("P"):
             #an ID starting with P belongs to a doctor.
@@ -40,6 +116,5 @@ def main():  # this particular function will control the main flow
 
 
     print("Welcome to the System!")
-menu =get_valid_menu() 
-if menu==1:
-    main()
+
+main()
