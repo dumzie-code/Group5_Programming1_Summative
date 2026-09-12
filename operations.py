@@ -18,4 +18,7 @@ def generate_new_id_doctor():
     id=random.randrange(00000000,99999999)
     print(f"Your patient id is DR-{id}")
     return f"DR-{id}"
-generate_new_id_doctor()
+
+
+def check_doctor_availability():
+    pass
